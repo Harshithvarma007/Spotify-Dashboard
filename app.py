@@ -52,8 +52,8 @@ def main():
     
     # Add GitHub and Medium blog links
     st.markdown("### Additional Resources")
-    st.markdown("[GitHub Repository](https://github.com/your-github-repo)")
-    st.markdown("[To make this dashboard from scratch, read the below blog](https://medium.com/your-medium-blog-link)")
+    st.markdown("[GitHub Repository](https://github.com/Harshithvarma007/Spotify-Dashboard)")
+    st.markdown("[To make this dashboard from scratch, read the blog](https://medium.com/@harshith007varma007/spotify-dashboard-advanced-power-bi-project-5844d4877893)")
 
 if __name__ == "__main__":
     main()
