@@ -20,35 +20,40 @@ def display_pdf(file_path, page_num, title="PDF Content"):
         st.error("Page number out of range")
 
 def main():
-    st.title("PDF Viewer and PBIX Downloader")
+    st.title("Spotify Dashboard")
 
     # Initialize session state for page navigation
     if "page_num" not in st.session_state:
         st.session_state.page_num = 0
     
     # Display contents of report.pdf with navigation
-    num_pages = fitz.open("report.pdf").page_count
-    display_pdf("report.pdf", st.session_state.page_num, "Contents of report.pdf")
+    num_pages = fitz.open("spotify_dashboard.pdf").page_count
+    display_pdf("spotify_dashboard.pdf", st.session_state.page_num, "Dashboard")
     
-    # Navigation buttons
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col1:
-        if st.button("Previous Page"):
-            st.session_state.page_num = (st.session_state.page_num - 1) % num_pages
-    with col3:
-        if st.button("Next Page"):
-            st.session_state.page_num = (st.session_state.page_num + 1) % num_pages
+    # # Navigation buttons
+    # col1, col2, col3 = st.columns([1, 2, 1])
+    # with col1:
+    #     if st.button("Previous Page"):
+    #         st.session_state.page_num = (st.session_state.page_num - 1) % num_pages
+    # with col3:
+    #     if st.button("Next Page"):
+    #         st.session_state.page_num = (st.session_state.page_num + 1) % num_pages
     
     # PBIX download button
-    pbix_file_path = "dashboard.pbix"  # Replace with your .pbix file path
+    pbix_file_path = "spotify_dashboard.pbix"  # Replace with your .pbix file path
     with open(pbix_file_path, "rb") as file:
         pbix_bytes = file.read()
     st.download_button(
         label="Download .pbix file",
         data=pbix_bytes,
-        file_name="report.pbix",
+        file_name="spotify_dashboard.pbix",
         mime="application/octet-stream"
     )
+    
+    # Add GitHub and Medium blog links
+    st.markdown("### Additional Resources")
+    st.markdown("[GitHub Repository](https://github.com/your-github-repo)")
+    st.markdown("[To make this dashboard from scratch, read the below blog](https://medium.com/your-medium-blog-link)")
 
 if __name__ == "__main__":
     main()
