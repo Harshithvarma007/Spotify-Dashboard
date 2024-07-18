@@ -1,7 +1,3 @@
-Certainly! Below is a detailed README.md template for your Spotify Dashboard project in Power BI:
-
----
-
 # Spotify Dashboard: Advanced Power BI Project
 
 Welcome to the Spotify Dashboard project, an advanced Power BI application showcasing the most streamed Spotify songs of 2023 with visualizations and analytics.
